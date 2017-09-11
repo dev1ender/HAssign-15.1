@@ -1,0 +1,17 @@
+Create table employee where data to be loaded
+------------------
+create table employee (emp_name String,emp_skill String,emp_rating int,emp_location String) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+
+Load data into this table employee
+------------------
+LOAD DATA LOCAL INPATH 'emp_details.txt' INTO TABLE employee;
+
+
+Analize the task
+------------------
+select emp_skill as skill, count(*) as count from table employee GROUP BY emp_skill;
+
+
+
+
+
